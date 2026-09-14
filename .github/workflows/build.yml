@@ -17,6 +17,11 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v3
 
+    - name: Create Env Files
+      run: |
+        touch .env
+        touch .env.example
+
     - name: Build APK with Gradle Wrapper Fallback
       run: |
         if [ -f "./gradlew" ]; then
